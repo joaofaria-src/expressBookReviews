@@ -62,7 +62,7 @@ regd_users.post("/login", (req,res) => {
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
   const { isbn } = req.params; // Get the ISBN from the request parameters
-  const { review } = req.query; // Get the review from the request query
+  const { review } = req.body; // Get the review from the request body
   const username = req.session.username; // Get the logged-in user's username from the session
 
   if (!username) {
